@@ -1,24 +1,20 @@
-# xr-ui
+# fhv-ui
 
-## Project setup
+### DEMO
+[https://qiulianying.github.io/fhv-ui/](https://qiulianying.github.io/fhv-ui/)
+
+### GitHub
+[https://github.com/qiulianying/fhv-ui](https://github.com/qiulianying/fhv-ui)
+
+### NPM
+[https://www.npmjs.com/package/fhv-ui](https://www.npmjs.com/package/fhv-ui)
+
+### Install
 ```
-yarn install
+npm i fhv-ui
 ```
 
 ### Compiles and hot-reloads for development
 ```
-yarn serve
+npm run serve
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

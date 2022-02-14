@@ -9,9 +9,10 @@
     "lib": "vue-cli-service build --target lib --name fhv-ui --dest lib packages/index.js"
   },
   "dependencies": {
+    "@highlightjs/vue-plugin": "^2.1.0",
     "core-js": "^3.6.5",
-    "vue": "^3.0.0",
     "epic-spinners": "^1.1.0",
+    "vue": "^3.0.0",
     "vue-highlightjs": "^1.3.3",
     "vue-router": "^4.0.0-0",
     "vue-status-indicator": "^1.2.1",

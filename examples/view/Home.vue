@@ -51,6 +51,11 @@
                                 group: '通用',
                                 name: '测试组件',
                                 path: '#/component/test'
+                            },
+                            {
+                                id: 222,
+                                name: 'Button 按钮',
+                                path: '#/component/button'
                             }
                         ]
                     },

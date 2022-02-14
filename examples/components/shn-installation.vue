@@ -44,13 +44,14 @@
         <!-- NPM安装 -->
         <h3 class="demo-table-title">安装方式</h3>
         <p class="demo-introduction">推荐使用 npm 的方式安装，它能更好地和 webpack 打包工具配合使用。</p>
+        <p class="demo-introduction">如果使用yarn安装也可以</p>
         <p class="demo-introduction">
             <a
-                    href="https://www.npmjs.com/package/shn-vue-ui"
+                    href="https://www.npmjs.com/package/fhv-ui"
                     target="_blank"
-            >https://www.npmjs.com/package/shn-vue-ui</a>
+            >https://www.npmjs.com/package/fhv-ui</a>
         </p>
-        <div class="demo-code-block">npm i shn-vue-ui -S</div>
+        <div class="demo-code-block">npm i fhv-ui -S</div>
 
         <!-- 快速上手 -->
         <h3 class="demo-table-title">快速上手</h3>
@@ -72,7 +73,9 @@
         <h3 class="demo-table-title">全栈之路</h3>
         <p class="demo-introduction"><span>想好好学习java的同学可以试试这个</span><a href="https://sdky.gitee.io/1%20Java%20SE/">https://sdky.gitee.io/1%20Java%20SE/</a>
         </p>
-        <p><a href="https://sdky.gitee.io/6%20Others/80%20Web%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%B7%AF%E7%BA%BF%E5%9B%BE.html">或者这个</a></p>
+        <p>
+            <a href="https://sdky.gitee.io/6%20Others/80%20Web%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%B7%AF%E7%BA%BF%E5%9B%BE.html">或者这个</a>
+        </p>
     </div>
 </template>
 
