@@ -7,8 +7,7 @@ import '../public/css/animation.scss'
 
 /*
 * 这里需要引入所有的组件，所以建议进行优化处理，需要优化的地方有
-* 1、实现组件自动导入，不需要手动import
-* 2、实现按需加载
+* 1、实现组件能够被按需加载
 * */
 
 /*
@@ -18,24 +17,11 @@ directory：要搜索的文件夹目录
 useSubdirectories：是否还应该搜索它的子目录
 regExp：一个匹配文件的正则表达式
 * */
-const myImport = require.context('./packages', true, /index\.js$/)
-console.log(myImport)
-
-
-import FhvTest from './test'
-import FhvAnchor from './anchor'
-import FhvAnchorLink from './anchor-link'
-import FhvElDemoBlock from './el-demo-block'
-import FhvButton from './button'
-// 所有的组件列表
-const components = [
-    FhvTest,
-    FhvAnchor,
-    FhvAnchorLink,
-    FhvElDemoBlock,
-    FhvButton
-  //  FhvAnchorLink
-]
+const myImport = require.context('../packages', true, /index\.js$/)
+const components = myImport.keys().map(item => {
+    const value = myImport(item)
+    return value.default
+})
 
 // 定义install方法，接收vue作为参赛
 const install = Vue => {

@@ -15,9 +15,9 @@
                                 <div class="nav-group__title" v-if="item_2.group">{{item_2.group}}</div>
                                 <a
                                         :class="{'active':active == item_2.id}"
-                                        :href="item_2.path"
+                                        :href="'#' + item_2.path"
                                         @click="active = item_2.id"
-                                >{{item_2.name}}</a>
+                                >{{item_2.title}}</a>
                             </li>
                         </ul>
                     </li>
@@ -31,36 +31,19 @@
 </template>
 
 <script>
+    // 基础组件
+    import baseComponent from "../routers/baseComponent";
+    // echarts组件
+    import echartsComponent from '../routers/echartsComponent'
+
     export default {
         name: 'home',
         data() {
             return {
                 active: 1,
-                ul_data: [
-                    {
-                        title: '开发指南',
-                        li_data: [
-                            {id: 1, name: '安装/快速上手', path: '#/component/installation'}
-                        ]
-                    },
-                    {
-                        title: '组件',
-                        li_data: [
-                            {
-                                id: 111,
-                                group: '通用',
-                                name: '测试组件',
-                                path: '#/component/test'
-                            },
-                            {
-                                id: 222,
-                                name: 'Button 按钮',
-                                path: '#/component/button'
-                            }
-                        ]
-                    },
-                ],
-                sidebarHover: false
+                sidebarHover: false,
+                ul_data: [],
+                allRouter: [],      // 所有路由的数组
             }
         },
         watch: {
@@ -71,16 +54,35 @@
             }
         },
         created() {
+            // 执行的生命周期处于vue.js的最开始阶段
+            this.allRouter = [
+                {id: 1, title: '安装/快速上手', path: '/component/installation'},
+                ...baseComponent,
+                ...echartsComponent
+            ]
+            this.ul_data = [
+                {
+                    title: '开发指南',
+                    li_data: [
+                        {id: 1, title: '安装/快速上手', path: '/component/installation'}
+                    ]
+                },
+                {
+                    title: '基础组件',
+                    li_data: baseComponent
+                },
+                {
+                    title: 'echarts组件',
+                    li_data: echartsComponent
+                }
+            ]
         },
         mounted() {
-            switch (this.$router.options.history.location) {
-                case '/component/installation':
-                    this.active = 1
-                    break
-                case '/component/test':
-                    this.active = 111
-                    break
-            }
+            this.allRouter.forEach(item => {
+                if (this.$router.options.history.location === item.path) {
+                    this.active = item.id
+                }
+            })
         },
         methods: {}
     }

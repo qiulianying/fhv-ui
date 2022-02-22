@@ -5,7 +5,7 @@
         <!-- 致谢 -->
         <h3 class="demo-table-title">致谢</h3>
         <div class="demo-tip">
-            <p>该项目使用Vue.js3.0版本开发</p>
+            <p>该项目使用Vue.js3.0版本开发，实际组件虽然有做兼容适配，但是项目尽量还是使用功能vue3.0最好</p>
             <p>
                 <a href="https://cn.vuejs.org/" target="_blank">https://cn.vuejs.org/</a>
             </p>
@@ -24,7 +24,7 @@
         </div>
 
         <!-- 代码仓库 -->
-        <h3 class="demo-table-title">
+<!--        <h3 class="demo-table-title">
             代码仓库
             <i class="iconfont icon-github-fill" style="margin: 0 10px;"></i>
         </h3>
@@ -39,7 +39,7 @@
                 />
             </a>
             点个star支持一下吧~
-        </p>
+        </p>-->
 
         <!-- NPM安装 -->
         <h3 class="demo-table-title">安装方式</h3>

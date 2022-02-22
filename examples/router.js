@@ -4,6 +4,7 @@ import Home from "./view/Home";
 //组件
 import component from './routers/component'
 import baseComponent from "./routers/baseComponent";
+import echartsComponent from "./routers/echartsComponent";
 
 // 使用路由
 let routesArray = [
@@ -16,7 +17,9 @@ let routesArray = [
             // 基础描述
             ...component,
             // 基础组件
-            ...baseComponent
+            ...baseComponent,
+            // echarts或者d3.js生成的图形组件
+            ...echartsComponent
         ]
     },
 ]

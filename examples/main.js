@@ -12,7 +12,7 @@ import router from './router'
 // 使用状态管理
 import store from './store'
 // 导入组件库
-import FhvUI from '../packages/index'
+import FhvUI from '../packages/packages'
 
 // 代码高亮，但是这里是vue2.0的方法，在3.0中并不适用
 // import VueHighlightJS from 'vue-highlightjs'

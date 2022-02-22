@@ -1,7 +1,8 @@
 <template>
     <div class="content-box">
         <h2 class="demo-title">Button 按钮</h2>
-        <p class="demo-introduction">按钮用于开始一个即时操作。</p>
+        <p class="demo-introduction">按钮内部相关优化如下</p>
+        <p class="demo-introduction">1、解决button在vue.js点击执行两次的问题</p>
         <!--页面信息导航牟点-->
         <!--        <fhv-anchor>
                     <fhv-anchor-link href="button-simple" title="基础用法" />
@@ -32,6 +33,57 @@
                 <code class="html">{{fCode(simple.code.html)}}</code>
             </template>
         </fhv-el-demo-block>
+
+        <!-- 禁用DEMO -->
+        <fhv-el-demo-block :height="168" :title="'禁用'" id="button-disabled">
+            <template v-slot:demo>
+                <fhv-button disabled>Default</fhv-button>
+                <fhv-button disabled type="primary">Primary</fhv-button>
+                <fhv-button disabled type="dashed">Dashed</fhv-button>
+                <fhv-button disabled type="danger">Danger</fhv-button>
+                <fhv-button disabled type="warning">Warning</fhv-button>
+            </template>
+            <template v-slot:code>
+                <code class="html">{{fCode(disabled.code.html)}}</code>
+            </template>
+        </fhv-el-demo-block>
+
+        <!-- 圆形按钮DEMO -->
+        <fhv-el-demo-block :height="168" :title="'圆形按钮'" id="button-circle">
+            <template v-slot:demo>
+                <fhv-button circle icon="shn-user"></fhv-button>
+                <fhv-button circle icon="shn-heart-fill" type="primary"></fhv-button>
+                <fhv-button circle type="dashed"></fhv-button>
+                <fhv-button circle icon="shn-delete-fill" type="danger"></fhv-button>
+                <fhv-button circle icon="shn-plus" type="warning"></fhv-button>
+            </template>
+            <template v-slot:code>
+                <code class="html">{{fCode(circle.code.html)}}</code>
+            </template>
+        </fhv-el-demo-block>
+
+        <!-- 自定义颜色DEMO -->
+        <fhv-el-demo-block
+                :height="105"
+                :title="'自定义颜色'"
+                id="button-customize"
+                introduction="自定义修改颜色，其type必须设置为customize"
+        >
+            <template v-slot:demo>
+                <fhv-button color="#2cbfbe" type="customize">customize</fhv-button>
+                <fhv-button circle color="#2cbfbe" icon="shn-heart-fill" type="customize"></fhv-button>
+            </template>
+            <template v-slot:code>
+                <code class="html">{{fCode(customize.code.html)}}</code>
+            </template>
+        </fhv-el-demo-block>
+
+        <!-- API -->
+        <div id="api">
+            <h3 class="demo-table-title">API</h3>
+            <P class="demo-table-introduction">属性说明如下：</P>
+            <fhv-table-simple :data="api" :type="'demo'"></fhv-table-simple>
+        </div>
     </div>
 </template>
 
