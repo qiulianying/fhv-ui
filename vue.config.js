@@ -49,6 +49,7 @@ const devConfig = {
     ...baseConfig
 }
 
-//
+// npm打包模式
+
 
 module.exports = NODE_ENV === 'development' ? devConfig : devConfig;
