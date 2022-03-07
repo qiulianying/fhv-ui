@@ -14,7 +14,10 @@ npm publish
 (2)gitHub文档上传
 npm run build
 dist文件通过git上传到对应的fhv-ui文件夹下
-文档案例地址：
+文档案例地址：https://qiulianying.github.io/fhv-ui/#/component/installation
+Git地址： https://github.com/qiulianying/fhv-ui
+git config --global http.sslVerify false   // 如果遇到ssl问题，解除https的ssl的凭证
+
 
 依赖组件说明：
 1、该组件的项目搭建以及案例引用使用的是最新的vue3.0，写法和构建上和之前vue2.0有一些差别，需要注意一些vue3.0已近进行更新后的地方
