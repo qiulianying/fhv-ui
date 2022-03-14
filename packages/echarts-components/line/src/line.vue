@@ -9,7 +9,7 @@
      * @Date: 2022/02/18 9:49
      * echarts折线图
      */
-    import * as echarts from 'echarts';
+    import echartsMixin from '../../../../layout/mixin/echarts'
 
     export default {
         name: 'fhv-line',
@@ -52,34 +52,14 @@
                 }
             }
         },
-        watch: {
-            option: {
-                handler: function () {
-                    // 监听到数据变化时进行修改
-                    this.initCharts()
-                },
-                deep: true
-            }
-        },
+        mixins: [echartsMixin],
         methods: {
-            initCharts() {
-                // 通过先获取数据再加载图形，可以解决刷新图形缩小的问题
+            // 针对数据进行处理并返回结果即可，会在继承的公用方法中自动调用
+            getOption() {
                 let _this = this
-                this.$nextTick(function () {
-                    let myPieChart = echarts.init(document.getElementById(`${_this.idName}`))
-                    _this.option.xAxis ? _this.option.xAxis.data = _this.xData : _this.option.xAxis = {data: _this.xData}
-                    _this.option.series ? _this.option.series[0].data = _this.yData : _this.option.series = [_this.yData]
-                    myPieChart.setOption(_this.option)
-                    setTimeout(function () {
-                        myPieChart.resize()
-                    }, 500)
-                    // 监听窗口变化
-                    window.addEventListener('resize', function () {
-                        setTimeout(function () {
-                            myPieChart.resize()
-                        }, 500)
-                    })
-                })
+                _this.option.xAxis ? _this.option.xAxis.data = _this.xData : _this.option.xAxis = {data: _this.xData}
+                _this.option.series ? _this.option.series[0].data = _this.yData : _this.option.series = [_this.yData]
+                return _this.option
             }
         }
     }

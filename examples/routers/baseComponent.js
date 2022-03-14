@@ -1,5 +1,6 @@
 import fhvTest from '../components/fhv-test'
 import fhvButtonDemo from '../components/fhv-button-demo'
+import fhvVerification from '../components/fhv-verification'
 
 export default [
     {
@@ -16,5 +17,12 @@ export default [
         path: '/component/button',
         name: 'fhvButtonDemo',
         component: fhvButtonDemo
+    },
+    {
+        id: 13,
+        title: '滑动验证组件',
+        path: '/component/verification',
+        name: 'fhvVerification',
+        component: fhvVerification
     }
 ]

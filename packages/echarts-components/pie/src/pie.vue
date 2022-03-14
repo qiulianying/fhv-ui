@@ -4,11 +4,11 @@
 </template>
 
 <script>
+    import echartsMixin from "../../../../layout/mixin/echarts";
     /**
      * @author: 冯耀华
      * @Date: 2022/02/21 15:26
      */
-    import * as echarts from 'echarts';
 
     export default {
         name: 'fhv-pie',
@@ -36,38 +36,17 @@
                 }
             }
         },
+        mixins: [echartsMixin],
         data() {
             return {}
         },
-        watch: {
-            option: {
-                handler: function () {
-                    // 监听到数据变化时进行修改
-                    this.initCharts()
-                },
-                deep: true
-            }
-        },
-        computed: {},
         components: {},
         methods: {
-            initCharts() {
+            // 针对数据进行处理并返回结果即可，会在继承的公用方法中自动调用
+            getOption() {
                 let _this = this
-                this.$nextTick(() => {
-                    let myPieChart = echarts.init(document.getElementById(_this.idName))
-                    _this.option.series[0].data = _this.echartsData
-                    myPieChart.setOption(_this.option)
-                    setTimeout(function () {
-                        myPieChart.resize()
-                    }, 500)
-
-                    // 监听窗口变化
-                    window.addEventListener('resize', function () {
-                        setTimeout(function () {
-                            myPieChart.resize()
-                        }, 500)
-                    })
-                })
+                _this.option.series[0].data = _this.echartsData
+                return _this.option
             }
         }
     }

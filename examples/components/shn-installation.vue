@@ -57,8 +57,10 @@
         <h3 class="demo-table-title">快速上手</h3>
         <p class="demo-introduction">你可以在 main.js 中引入整个 fvn-ui。</p>
         <div class="demo-code-block">
+            <p>import { createApp } from 'vue'</p>
             <p>import fvnUI from 'fvn-vue-ui'</p>
-            <p style="margin-top:20px">Vue.use(fvnUI);</p>
+            <p>const app = createApp(App)</p>
+            <p style="margin-top:20px">app.use(FhvUI)</p>
         </div>
 
         <!-- 按需加载 -->

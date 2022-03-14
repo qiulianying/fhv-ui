@@ -1,6 +1,8 @@
 项目结构以及简介：
 examples：用于存放实例并作为文档展示
-packages：用于存放组件
+packages：用于存放组件相关代码
+lib：用于更新npm
+dist：
 
 依赖安装以及启动
 yarn install
@@ -24,6 +26,9 @@ git config --global http.sslVerify false   // 如果遇到ssl问题，解除http
 2、目前该项目有关组件自动化过程还不足，后续根据情况需要进一步优化
 
 
+部分组件的搭建方式以及知识点：
+1、echarts组件
+a：其中使用vue中的属性minxin将主要经常执行的代码进行处理
 
 webpack打包原理以及按需加载实现：
 
