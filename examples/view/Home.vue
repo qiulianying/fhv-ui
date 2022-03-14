@@ -2,13 +2,28 @@
     <div class="home">
         <div class="header">
             <div class="container">
-                <span class="title">fhv-ui</span>
+                <div class="header_ui">
+                    <span class="title">fhv-ui</span>
+                </div>
+                <!--右侧对应路由页面-->
+                <div class="moRouter">
+                    <ul class="moRouter_ul">
+                        <li v-for="(item, index) in rightRouter" :key="index">
+                            <a :class="{'active':nowIndex == item.id}"
+                               :href="'#' + item.path"
+                               @click="nowIndex = item.id"
+                            >
+                                {{item.title}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="main">
             <div class="sidebar">
                 <ul>
-                    <li :key="item_1.title" class="nav-item" v-for="item_1 in ul_data">
+                    <li :key="item_1.title" class="nav-item" v-for="item_1 in ul_data[nowIndex]">
                         <a>{{item_1.title}}</a>
                         <ul class="pure-menu-list" v-if="item_1.li_data.length != 0">
                             <li :key="item_2.path" class="nav-item" v-for="item_2 in item_1.li_data">
@@ -35,6 +50,8 @@
     import baseComponent from "../routers/baseComponent";
     // echarts组件
     import echartsComponent from '../routers/echartsComponent'
+    // 通过js模块
+    import publicJavascript from '../routers/publicJavascript'
 
     export default {
         name: 'home',
@@ -44,12 +61,26 @@
                 sidebarHover: false,
                 ul_data: [],
                 allRouter: [],      // 所有路由的数组
+                nowIndex: 0,
+                rightRouter: [
+                    {
+                        title: 'fhv-ui组件',
+                        path: '/component/installation',
+                        id: 0
+                    },
+                    {
+                        title: '通用js模块',
+                        path: '/component/publicjs',
+                        id: 1
+                    }
+                ]
             }
         },
         watch: {
             $route: function (to, from) {
                 if (from.path != to.path) {
                     document.documentElement.scrollTop = 0
+                    this.setRouterActice()
                 }
             }
         },
@@ -58,9 +89,10 @@
             this.allRouter = [
                 {id: 1, title: '安装/快速上手', path: '/component/installation'},
                 ...baseComponent,
-                ...echartsComponent
+                ...echartsComponent,
+                ...publicJavascript
             ]
-            this.ul_data = [
+            let componentsArray = [
                 {
                     title: '开发指南',
                     li_data: [
@@ -76,15 +108,31 @@
                     li_data: echartsComponent
                 }
             ]
+            let publicJs = [
+                {
+                    title: '通用javascript模块',
+                    li_data: publicJavascript
+                }
+            ]
+            // 通用组件模块
+            this.ul_data = [
+                componentsArray,
+                publicJs
+            ]
         },
         mounted() {
-            this.allRouter.forEach(item => {
-                if (this.$router.options.history.location === item.path) {
-                    this.active = item.id
-                }
-            })
+            this.setRouterActice()
         },
-        methods: {}
+        methods: {
+            // 设置路由
+            setRouterActice() {
+                this.allRouter.forEach(item => {
+                    if (this.$router.options.history.location === item.path) {
+                        this.active = item.id
+                    }
+                })
+            }
+        }
     }
 </script>
 <style lang="scss" scoped>
@@ -109,12 +157,44 @@
                 padding: 0 10px;
                 border-bottom: 1px solid #dcdfe6;
 
-                .title {
-                    // color: $--color-primary;
-                    color: #409eff;
-                    font-size: 26px;
-                    font-weight: 500;
-                    font-family: '微软雅黑';
+                .header_ui {
+                    float: left;
+                    .title {
+                        // color: $--color-primary;
+                        color: #409eff;
+                        font-size: 26px;
+                        font-weight: 500;
+                        font-family: '微软雅黑';
+                    }
+                }
+
+                .moRouter {
+                    float: right;
+
+                    .moRouter_ul {
+                        li {
+                            cursor: pointer;
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-right: 20px;
+                            &:hover {
+                                color: #409eff;
+                                text-decoration: underline #409eff;
+                            }
+                            &:last-child {
+                                margin-right: 0;
+                            }
+
+                            a {
+                                color: #666666;
+                            }
+
+                            .active {
+                                color: #409eff;
+                                text-decoration: underline #409eff;
+                            }
+                        }
+                    }
                 }
             }
         }

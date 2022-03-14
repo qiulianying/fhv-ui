@@ -5,6 +5,8 @@ import Home from "./view/Home";
 import component from './routers/component'
 import baseComponent from "./routers/baseComponent";
 import echartsComponent from "./routers/echartsComponent";
+import publicJavascript from './routers/publicJavascript'
+import otherRouter from "./routers/otherRouter";
 
 // 使用路由
 let routesArray = [
@@ -19,9 +21,12 @@ let routesArray = [
             // 基础组件
             ...baseComponent,
             // echarts或者d3.js生成的图形组件
-            ...echartsComponent
+            ...echartsComponent,
+            // 公用js模块
+            ...publicJavascript
         ]
     },
+    ...otherRouter
 ]
 
 const router = createRouter({
