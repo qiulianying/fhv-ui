@@ -1,11 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import axios from 'axios';
 
 // 引入公共public中的样式以及公用方法
 import '../public/css/cover.scss';
 import '../public/iconfont/iconfont.css';
 import '../public/css/animate.min.css'
 import { fCode, unique } from '../public/js/shn-vue-ui-base.js'
+import appPlugin from './plugins/app'
 
 // 使用路由
 import router from './router'
@@ -44,6 +46,14 @@ app.use((app) => {
 // 测试vue3.0代替vue3.0 Vue.prototype.myFunction写法
 app.config.globalProperties.fCode = fCode
 app.config.globalProperties.unique = unique
+
+// 接口调用
+app.config.globalProperties.$axios = axios
+
+// h5公众号支付js模块公用方法
+app.config.globalProperties.$plugin = {
+    app: appPlugin
+}
 
 // vue3.0页面加载
 app.mount('#app')

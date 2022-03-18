@@ -15,8 +15,9 @@ npm login
 npm publish
 (2)gitHub文档上传
 npm run build
-dist文件通过git上传到对应的fhv-ui文件夹下
+dist文件通过git上传到对应的fhv-ui文件夹下，打包文件在docs下
 文档案例地址：https://qiulianying.github.io/fhv-ui/#/component/installation
+文档中文件内容范例：https://qiulianying.github.io/fhv-ui/img/Koala.jpg
 Git地址： https://github.com/qiulianying/fhv-ui
 git config --global http.sslVerify false   // 如果遇到ssl问题，解除https的ssl的凭证
 

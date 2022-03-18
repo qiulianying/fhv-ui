@@ -73,10 +73,13 @@
 
         <!-- 全栈之路 -->
         <h3 class="demo-table-title">全栈之路</h3>
-        <p class="demo-introduction"><span>想好好学习java的同学可以试试这个</span><a href="https://sdky.gitee.io/1%20Java%20SE/">https://sdky.gitee.io/1%20Java%20SE/</a>
+        <p class="demo-introduction"><span>想好好学习java的同学可以试试这个</span><a target="_blank" href="https://sdky.gitee.io/1%20Java%20SE/">https://sdky.gitee.io/1%20Java%20SE/</a>
         </p>
         <p>
-            <a href="https://sdky.gitee.io/6%20Others/80%20Web%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%B7%AF%E7%BA%BF%E5%9B%BE.html">或者这个</a>
+            <a target="_blank" href="https://sdky.gitee.io/6%20Others/80%20Web%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%B7%AF%E7%BA%BF%E5%9B%BE.html">或者这个</a>
+        </p>
+        <p>
+            <a href="https://juejin.cn/post/6844903735668244488" target="_blank">文档搭建部分技术参考文献</a>
         </p>
     </div>
 </template>

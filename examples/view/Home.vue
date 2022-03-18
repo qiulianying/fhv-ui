@@ -218,6 +218,7 @@
                 top: 135px;
                 visibility: hidden;
                 overflow: auto;
+                padding-bottom: 30px;
 
                 &:hover {
                     visibility: visible;

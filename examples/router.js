@@ -6,7 +6,6 @@ import component from './routers/component'
 import baseComponent from "./routers/baseComponent";
 import echartsComponent from "./routers/echartsComponent";
 import publicJavascript from './routers/publicJavascript'
-import otherRouter from "./routers/otherRouter";
 
 // 使用路由
 let routesArray = [
@@ -25,8 +24,7 @@ let routesArray = [
             // 公用js模块
             ...publicJavascript
         ]
-    },
-    ...otherRouter
+    }
 ]
 
 const router = createRouter({

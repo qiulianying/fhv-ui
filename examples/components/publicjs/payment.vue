@@ -7,9 +7,9 @@
 
         <div style="margin-top: 20px">
             <div>
-                <p>写入对应的参数</p>
-                <fhv-button type="success">点击复制链接</fhv-button>
-                <fhv-button type="success">点击生成二维码</fhv-button>
+                <p>这里要实现该支付组件调试还需要绑定到对应的公众号支付程序，或者后端提供可全平台支付的参数</p>
+                <p>准备在这里预留对应的小程序以及h5支付进行对应的跳转支付</p>
+                <p>这里需要开发到后端java接口能更快实现，所以开发暂停，容我去学一波java</p>
             </div>
         </div>
     </div>
