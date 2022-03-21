@@ -70,10 +70,10 @@ function removeClass (element, className) {
 //     return `./image/${randomNum(1,10)}.png`
 // }
 
-// 默认获取gitlab中保存的1-10命名的图片
+// 默认获取gitlab中保存的1-10命名的图片，如果有外部传入的图片以外部为有限
 const getRandomImgSrc = () => {
     let mynumber = Math.ceil(Math.random() * 10)
-    return `/image/${mynumber}.png`
+    return `https://qiulianying.github.io/fhv-ui/img/${mynumber}.png`
 }
 
 // function randomNum(minNum,maxNum){
@@ -117,17 +117,17 @@ function square (x) {
 }
 
 class Jigsaw {
-    constructor ({ el, width = w, height = h, onSuccess, onFail, onRefresh }) {
-        Object.assign(el.style, {
+    constructor ({ el, width = w, height = h, onReturnState, onRefresh }) {
+        let scource = {
             position: 'relative',
             width: width + 'px',
             margin: '0 auto'
-        })
+        }
+        Object.assign(el.style, scource)
         this.width = width
         this.height = height
         this.el = el
-        this.onSuccess = onSuccess
-        this.onFail = onFail
+        this.onReturnState = onReturnState
         this.onRefresh = onRefresh
     }
 
@@ -220,6 +220,7 @@ class Jigsaw {
         this.blockCtx.putImageData(ImageData, 0, y)
     }
 
+    // 刷新方法
     refresh(){
         this.reset()
         typeof this.onRefresh === 'function' && this.onRefresh()
@@ -267,7 +268,7 @@ class Jigsaw {
             if (spliced) {
                 if (verified) {
                     addClass(this.sliderContainer, 'sliderContainer_success')
-                    typeof this.onSuccess === 'function' && this.onSuccess()
+                    typeof this.onReturnState === 'function' && this.onReturnState(true)
                 } else {
                     addClass(this.sliderContainer, 'sliderContainer_fail')
                     this.text.innerHTML = '请再试一次'
@@ -275,7 +276,7 @@ class Jigsaw {
                 }
             } else {
                 addClass(this.sliderContainer, 'sliderContainer_fail')
-                typeof this.onFail === 'function' && this.onFail()
+                typeof this.onReturnState === 'function' && this.onReturnState(false)
                 setTimeout(this.reset.bind(this), 1000)
             }
         }
