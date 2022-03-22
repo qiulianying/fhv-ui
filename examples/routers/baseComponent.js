@@ -3,6 +3,7 @@ import fhvButtonDemo from '../components/fhv-button-demo'
 import fhvVerification from '../components/fhv-verification'
 import fhvBackTop from '../components/fhv-backtop-demo'
 import fhvImageVerification from '../components/fhv-imageverification'
+import fhvFooterToolbar from '../components/fhv-footertoolbar'
 
 export default [
     {
@@ -40,5 +41,12 @@ export default [
         path: '/component/fhvBackTop',
         name: 'fhvBackTop',
         component: fhvBackTop
+    },
+    {
+        id: 16,
+        title: 'footertoolbar 底部工具栏',
+        path: '/component/fhv-footertoolbar',
+        name: 'fhvFooterToolbar',
+        component: fhvFooterToolbar
     },
 ]

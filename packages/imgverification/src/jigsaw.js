@@ -132,12 +132,21 @@ class Jigsaw {
     }
 
     init () {
+        // 创建画布类型dom
         this.initDOM()
+        // 获取图片链接初始化
         this.initImg()
+        // 绑定事件
         this.bindEvents()
     }
 
     initDOM () {
+        // 验证是否已经存在之前创建的对应的元素，如果存在对应的元素就不再创建新的元素
+        console.log('验证是否存在')
+        console.log(this.el.classList.contains('sliderContainer'))
+        if (this.el.classList.contains('sliderContainer')) {
+            return
+        }
         const { width, height } = this
         const canvas = createCanvas(width, height) // 画布
         const block = createCanvas(width, height) // 滑块
