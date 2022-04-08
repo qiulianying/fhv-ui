@@ -79,6 +79,12 @@
             <a target="_blank" href="https://sdky.gitee.io/6%20Others/80%20Web%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%B7%AF%E7%BA%BF%E5%9B%BE.html">或者这个</a>
         </p>
         <p>
+            <a href="http://www.macrozheng.com/#/foreword/mall_foreword_01">或者这个</a>
+        </p>
+        <p>
+            <a href="https://www.bilibili.com/read/cv5216534">或者这个</a>
+        </p>
+        <p>
             <a href="https://juejin.cn/post/6844903735668244488" target="_blank">文档搭建部分技术参考文献</a>
         </p>
     </div>

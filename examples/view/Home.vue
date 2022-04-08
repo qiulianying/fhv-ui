@@ -9,7 +9,7 @@
                 <div class="moRouter">
                     <ul class="moRouter_ul">
                         <li v-for="(item, index) in rightRouter" :key="index">
-                            <a :class="{'active':nowIndex == item.id}"
+                            <a :class="{'active':nowIndex === item.id}"
                                :href="'#' + item.path"
                                @click="nowIndex = item.id"
                             >
@@ -23,7 +23,7 @@
         <div class="main">
             <div class="sidebar">
                 <ul>
-                    <li :key="item_1.title" class="nav-item" v-for="item_1 in ul_data[nowIndex]">
+                    <li :key="item_1.title" class="nav-item" v-for="item_1 in ul_data[nowIndex.split('s')[1]]">
                         <a>{{item_1.title}}</a>
                         <ul class="pure-menu-list" v-if="item_1.li_data.length != 0">
                             <li :key="item_2.path" class="nav-item" v-for="item_2 in item_1.li_data">
@@ -50,7 +50,9 @@
     import baseComponent from "../routers/baseComponent";
     // echarts组件
     import echartsComponent from '../routers/echartsComponent'
-    // 通过js模块
+    // 通过用css模块
+    import publicCss from "../routers/publicCss";
+    // 通用js模块
     import publicJavascript from '../routers/publicJavascript'
 
     export default {
@@ -61,17 +63,22 @@
                 sidebarHover: false,
                 ul_data: [],
                 allRouter: [],      // 所有路由的数组
-                nowIndex: 0,
+                nowIndex: 's0',
                 rightRouter: [
                     {
                         title: 'fhv-ui组件',
                         path: '/component/installation',
-                        id: 0
+                        id: 's0'
+                    },
+                    {
+                        title: '通用css模块',
+                        path: '/component/FlexUse',
+                        id: 's1'
                     },
                     {
                         title: '通用js模块',
                         path: '/component/publicjs',
-                        id: 1
+                        id: 's2'
                     }
                 ]
             }
@@ -87,16 +94,22 @@
         created() {
             // 执行的生命周期处于vue.js的最开始阶段
             this.allRouter = [
-                {id: 1, title: '安装/快速上手', path: '/component/installation'},
+                {id: 1, title: '安装/快速上手', path: '/component/installation', from: 's0'},
                 ...baseComponent,
                 ...echartsComponent,
+                ...publicCss,
                 ...publicJavascript
             ]
             let componentsArray = [
                 {
                     title: '开发指南',
                     li_data: [
-                        {id: 1, title: '安装/快速上手', path: '/component/installation'}
+                        {
+                            id: 1,
+                            title: '安装/快速上手',
+                            path: '/component/installation',
+                            from: 's0'
+                        }
                     ]
                 },
                 {
@@ -108,6 +121,14 @@
                     li_data: echartsComponent
                 }
             ]
+            // css解析模块路由
+            let publicCssModal = [
+                {
+                    title: '通用css样式模块',
+                    li_data: publicCss
+                }
+            ]
+            // js相关模块路由
             let publicJs = [
                 {
                     title: '通用javascript模块',
@@ -117,6 +138,7 @@
             // 通用组件模块
             this.ul_data = [
                 componentsArray,
+                publicCssModal,
                 publicJs
             ]
         },
@@ -129,6 +151,7 @@
                 this.allRouter.forEach(item => {
                     if (this.$router.options.history.location === item.path) {
                         this.active = item.id
+                        this.nowIndex = item.from
                     }
                 })
             }
@@ -159,6 +182,7 @@
 
                 .header_ui {
                     float: left;
+
                     .title {
                         // color: $--color-primary;
                         color: #409eff;
@@ -177,10 +201,12 @@
                             display: inline-block;
                             vertical-align: middle;
                             margin-right: 20px;
+
                             &:hover {
                                 color: #409eff;
                                 text-decoration: underline #409eff;
                             }
+
                             &:last-child {
                                 margin-right: 0;
                             }

@@ -5,6 +5,7 @@ export default [
     {
         path: '/component/installation',
         name: 'shnInstallation',
-        component: shnInstallation
+        component: shnInstallation,
+        from: 's0'
     }
 ]

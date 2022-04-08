@@ -12,6 +12,7 @@ import '../public/css/animation.scss'
 
 /*
 * 组件自动化导入：
+* 这个是webpack下的api
 require.context(directory, useSubdirectories = false, regExp = /^\.\//)
 directory：要搜索的文件夹目录
 useSubdirectories：是否还应该搜索它的子目录

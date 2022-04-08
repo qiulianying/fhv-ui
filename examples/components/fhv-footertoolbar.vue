@@ -11,6 +11,7 @@
                 <fhv-footertoolbar
                         :cancelButtonText="simple.cancelButtonText"
                         :visibilityHeight="200"
+                        :content="'快看啊，这里就是你要的底部工具!!!'"
                         @cancel="cancel"
                         @confirm="confirm"
                 ></fhv-footertoolbar>
@@ -38,12 +39,13 @@
                 simple: {
                     code: {
                         html: `
-          <fhv-footertoolbar
-            :cancelButtonText="cancelButtonText"
-            :visibilityHeight="50"
-            @cancel="cancel"
-            @confirm="confirm"
-          ></fhv-footertoolbar>
+                <fhv-footertoolbar
+                        :cancelButtonText="simple.cancelButtonText"
+                        :visibilityHeight="200"
+                        :content="'快看啊，这里就是你要的底部工具!!!'"
+                        @cancel="cancel"
+                        @confirm="confirm"
+                ></fhv-footertoolbar>
           `,
                         javascript: `
           export default {

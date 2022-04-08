@@ -9,20 +9,23 @@ export default [
         title: '导读',
         path: '/component/echartsInstallation',
         name: 'echartsInstallation',
-        component: echartsInstallation
+        component: echartsInstallation,
+        from: 's0'
     },
     {
         id: 112,
         title: '折线图',
         path: '/component/line',
         name: 'line',
-        component: echartsLine
+        component: echartsLine,
+        from: 's0'
     },
     {
         id: 113,
         title: '饼图',
         path: '/component/pie',
         name: 'pie',
-        component: echartsPie
+        component: echartsPie,
+        from: 's0'
     }
 ]

@@ -5,6 +5,7 @@ import Home from "./view/Home";
 import component from './routers/component'
 import baseComponent from "./routers/baseComponent";
 import echartsComponent from "./routers/echartsComponent";
+import publicCss from "./routers/publicCss";
 import publicJavascript from './routers/publicJavascript'
 
 // 使用路由
@@ -21,6 +22,8 @@ let routesArray = [
             ...baseComponent,
             // echarts或者d3.js生成的图形组件
             ...echartsComponent,
+            // 公用css模块
+            ...publicCss,
             // 公用js模块
             ...publicJavascript
         ]

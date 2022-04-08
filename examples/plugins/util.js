@@ -75,5 +75,23 @@ export default {
 		}else{
 			return sColor;
 		}
+	},
+	// 生成[n,m]的随机整数，包括n,m在内
+	randomNum(minNum,maxNum){
+		let number = 0;
+		switch(arguments.length){
+			// 只有一个参数的情况下
+			case 1:
+				number = parseInt(Math.random()*minNum+1,10);   // radix取10表示转为10进制数据，这里一般是固定的
+				break;
+			// 两个参数的情况下
+			case 2:
+				number = parseInt(Math.random()*(maxNum-minNum+1)+minNum,10);
+				break;
+			default:
+				number =  0;
+				break;
+		}
+		return number
 	}
 }
