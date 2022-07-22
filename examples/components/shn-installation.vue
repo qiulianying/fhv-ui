@@ -87,6 +87,9 @@
         <p>
             <a href="https://juejin.cn/post/6844903735668244488" target="_blank">文档搭建部分技术参考文献</a>
         </p>
+        <p>
+            <a href="https://web.qianguyihao.com/#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">前端参考文献</a>
+        </p>
     </div>
 </template>
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div>
+        这里测试一下有关vue.js双向数据绑定的完成版本，多次操作dom的情况下，为提高性能和效率，会先将所有的节点转换城文档碎片fragment进行编译操作，解析操作完成后，再将fragment添加到原来的真实dom节点中
+    </div>
+    <input type="text" id="a">
+
+</div>
+<script type="text/ecmascript-6">
+    // 创建一个计算方法
+    function Compile(node, vm) {
+        // if (node) {
+        //     this.$frag = this.node
+        // }
+    }
+
+    // 为该方法新增属性
+    Compile.prototype = {
+        nodeToFragment: function (node, vm) {
+            let self = this
+            // 创建一个虚拟节点
+            let frag = document.createDocumentFragment()
+        }
+    }
+
+
+    function Vue(options) {
+        this.data = options.data
+        let data = this.data
+        let id = options.id
+        let dom =new Compile(document.getElementById(id),this);
+        // 编译完成后，将dom返回到app中
+        document.getElementById(id).appendChild(dom);
+    }
+
+    let vm = new Vue({
+        el: 'app',
+        data: {
+            text: 'hello world'
+        }
+    })
+</script>
+</body>
+</html>

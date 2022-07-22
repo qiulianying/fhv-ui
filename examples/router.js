@@ -1,13 +1,17 @@
 // 还有 createWebHashHistory 和 createMemoryHistory  vue-router4.0使用的迁移方式
 import {createRouter, createWebHashHistory} from 'vue-router'
 import Home from "./view/Home";
-//组件
-import component from './routers/component'
-import baseComponent from "./routers/baseComponent";
-import echartsComponent from "./routers/echartsComponent";
-import publicCss from "./routers/publicCss";
-import publicJavascript from './routers/publicJavascript'
 
+// 自动化引入路由以及部分无需引入的区域
+let ignoreArray = ['otherRouter.js']
+const myRouterArray = require.context('./routers', false, /.js$/)
+let componentsRouter = new Array()
+myRouterArray.keys().map(item => {
+    if (ignoreArray.indexOf(item.split('./')[1]) === -1) {
+        const value = myRouterArray(item)
+        componentsRouter = componentsRouter.concat(value.default)
+    }
+})
 // 使用路由
 let routesArray = [
     {
@@ -15,21 +19,9 @@ let routesArray = [
         name: 'home',
         component: Home,
         redirect: '/component/installation',
-        children: [
-            // 基础描述
-            ...component,
-            // 基础组件
-            ...baseComponent,
-            // echarts或者d3.js生成的图形组件
-            ...echartsComponent,
-            // 公用css模块
-            ...publicCss,
-            // 公用js模块
-            ...publicJavascript
-        ]
+        children: componentsRouter
     }
 ]
-
 const router = createRouter({
     history: createWebHashHistory(),        //vue-router4.0版本的数据切换
     routes: routesArray

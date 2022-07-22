@@ -7,14 +7,16 @@
                 @mouseover="arrowAnimation ? hover_animation = true : null"
                 class="demo-block"
         >
-            <div class="source">
+            <div class="source" v-show="title ? true : false">
                 <slot name="demo"/>
             </div>
             <div :style="{ height: code_height + 'px' }" class="code">
                 <!--使用高亮组件-->
-                <pre v-highlightjs><slot name="code"/></pre>
+                <pre v-highlightjs>
+                    <slot name="code"/>
+                </pre>
             </div>
-            <div @click="showCode()" class="demo-block-control">
+            <div @click="showCode()" class="demo-block-control" v-if="hideButton ? true : false">
                 <i
                         :class="{
             hovering_i: hover_animation || !arrowAnimation,
@@ -52,13 +54,23 @@
             arrowAnimation: {
                 type: Boolean,
                 default: true
+            },
+            // 是否展开代码块内容
+            showInfo: {
+                type: Boolean,
+                default: false
+            },
+            // 是否展示展开和关闭代码块
+            hideButton: {
+                type: Boolean,
+                default: true
             }
         },
         data() {
             return {
                 data: '',
                 hover_animation: false,
-                code_height: 0
+                code_height: this.showInfo ? this.height : 0
             }
         },
         methods: {
@@ -108,7 +120,8 @@
                 background: #282c34;
                 border-top: 1px solid #eaeefb;
                 transition: height 0.2s;
-                overflow: hidden;
+                overflow-x: hidden;
+                overflow-y: scroll;
             }
 
             .demo-block-control {

@@ -12,6 +12,8 @@ yarn install
 (1)npm依赖上传打包：
 npm run lib
 npm login
+userName：qiulianying
+password:
 npm publish
 (2)gitHub文档上传
 npm run build
@@ -33,3 +35,8 @@ a：其中使用vue中的属性minxin将主要经常执行的代码进行处理
 
 webpack打包原理以及按需加载实现：
 
+
+
+Form Generator 代码生成工具，不过目前只能用于vue + element组件的情况下
+https://blog.csdn.net/yehaocheng520/article/details/106326826
+https://mrhj.gitee.io/form-generator/#/

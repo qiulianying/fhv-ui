@@ -1,36 +1,23 @@
-// 这里用于测试js的各种性能以及写法
-// https://editor.mdnice.com/?outId=ab1472f4c1a9403aa312ccb867a90b63  文档编写 可以查看详细说明
-
-// 有关跳出循环 return break continue
 /*
-* return：语句会终止函数的执行并返回函数的值，会终止当前这一块函数的后续所有操作
-* break：跳出代码块, 所以 break 可以使用于循环和 switch 等，代码块：{}
-* continue：进行下一个迭代，所以continue只能用于循环的代码块
+* Object.defineProperty 会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象
+*
 * */
-// return
-function testReturn() {
-    for (let i = 0; i < 5; i++) {
-        if (i === 3) return
-        console.log("a this number is " + i)
-    }
-}
-// break
-function testBreak() {
-    for (let i = 0; i < 5; i++) {
-        if (i === 3) break
-        console.log("b this number is " + i)
-    }
-}
-// continue
-function testContinue() {
-    for (let i = 0; i < 5; i++) {
-        if (i === 3) continue // 进行下一个迭代了
-        console.log("c this number is " + i)
-    }
-}
-testReturn()
-testBreak()
-testContinue()
+const object1 = {}
+Object.defineProperty(object1, 'prototype1', {
+    value: 42,
+    writable: false
+})
+console.log(object1.prototype1)
 
-
+const object2 = {}
+Object.defineProperty(object2, 'hello', {
+    get: function() {
+        return object2
+    },
+    set: function (v) {
+        console.log('set' + v)
+        return v
+    }
+})
+object2.hello = '111'
 

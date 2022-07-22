@@ -54,6 +54,8 @@
     import publicCss from "../routers/publicCss";
     // 通用js模块
     import publicJavascript from '../routers/publicJavascript'
+    // js基础入门及深入
+    import baseJavascript from '../routers/baseJavascript'
 
     export default {
         name: 'home',
@@ -79,6 +81,11 @@
                         title: '通用js模块',
                         path: '/component/publicjs',
                         id: 's2'
+                    },
+                    {
+                        title: 'js基础入门及深入',
+                        path: '/component/basejs/basejs1',
+                        id: 's3'
                     }
                 ]
             }
@@ -98,7 +105,8 @@
                 ...baseComponent,
                 ...echartsComponent,
                 ...publicCss,
-                ...publicJavascript
+                ...publicJavascript,
+                ...baseJavascript
             ]
             let componentsArray = [
                 {
@@ -135,11 +143,19 @@
                     li_data: publicJavascript
                 }
             ]
+            // js基础模块路由
+            let baseJs = [
+                {
+                    title: '有关js基础以及深究',
+                    li_data: baseJavascript
+                }
+            ]
             // 通用组件模块
             this.ul_data = [
                 componentsArray,
                 publicCssModal,
-                publicJs
+                publicJs,
+                baseJs
             ]
         },
         mounted() {
@@ -241,7 +257,7 @@
                 margin-right: 40px;
                 width: 200px;
                 height: 80%;
-                top: 135px;
+                top: 110px;
                 visibility: hidden;
                 overflow: auto;
                 padding-bottom: 30px;

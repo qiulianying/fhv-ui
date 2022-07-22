@@ -1,0 +1,4 @@
+#!/bin/sh
+chmod +x entrypoint.sh
+docker build -t dockerdev.51zcm.cc/sp-mate/fhvui:$1 .
+docker push dockerdev.51zcm.cc/sp-mate/fhvui:$1

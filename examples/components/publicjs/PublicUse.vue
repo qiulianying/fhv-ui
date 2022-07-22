@@ -5,7 +5,7 @@
 
         <fhv-el-demo-block :height="2200" :title="'基础用法'" id="button-simple">
             <template v-slot:code>
-                <code class="html">{{simple.publicJs}}</code>
+                <code class="hljs" style="padding-top: 0 !important;">{{simple.publicJs}}</code>
             </template>
         </fhv-el-demo-block>
     </div>

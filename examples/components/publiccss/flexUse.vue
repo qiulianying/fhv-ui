@@ -23,7 +23,6 @@
                 <code class="javascript">{{fCode(simple.code.css)}}</code>
             </template>
         </fhv-el-demo-block>
-
     </div>
 </template>
 
@@ -76,7 +75,7 @@
                 margin-right: 0;
             }
         }
-
+        // 表示当前项比例为4
         .myGrow {
             flex-grow: 4
         }
@@ -129,7 +128,7 @@
                 margin-right: 0;
             }
         }
-
+        // 表示当前项比例为4
         .myGrow {
             flex-grow: 4
         }

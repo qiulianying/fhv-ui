@@ -44,8 +44,8 @@ const devConfig = {
             filename: 'index.html' // 输出文件
         }
     },
-    publicPath: './',       // 使用相对路径
-    outputDir: 'docs',      // 输出文件路径
+    publicPath: '/fhvui/',       // 使用相对路径
+    outputDir: 'docker-build/dist',      // 输出文件路径
     ...baseConfig
 }
 

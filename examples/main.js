@@ -25,6 +25,11 @@ import FhvUI from '../packages/packages'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'  // 引入其他主题
 
+
+// 测试
+// import instance from './components/dialogTest/instance'
+
+
 const app = createApp(App)
 app.use(store)
 app.use(router)
@@ -46,6 +51,8 @@ app.use((app) => {
 // 测试vue3.0代替vue3.0 Vue.prototype.myFunction写法
 app.config.globalProperties.fCode = fCode
 app.config.globalProperties.unique = unique
+
+// app.config.globalProperties.$errorMsg  = instance
 
 // 接口调用
 app.config.globalProperties.$axios = axios
