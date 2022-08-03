@@ -10,7 +10,7 @@
                     `
                     // 首先是for循环，这个使用的最多，可以广泛使使用在大部分场景中
                     var ax = 0
-                    for (var bx = 0; bx < 10; bx ++) {
+                    for (var bx = 0; bx &lt; 10; bx ++) {
                     ax = ax + 1
                     }
                     console.log(ax) // 10
@@ -25,7 +25,7 @@
             <template v-slot:code>
                 <code class="hljs" style="padding-top: 0 !important;">{{
                     `
-                    for (var ax = 1; ax < 4; ax ++) {
+                    for (var ax = 1; ax &lt; 4; ax ++) {
                     setTimeout(function () {
                     console.log(ax)  // 3, 3, 3
                     }, 0)
@@ -46,7 +46,7 @@
                 <code class="hljs" style="padding-top: 0 !important;">{{
                     `
                     let ax = new Array()
-                    for (let cx = 0; cx < 10; cx ++) {
+                    for (let cx = 0; cx &lt; 10; cx ++) {
                     if (cx % 2 !== 0) {
                     ax[cx] = cx
                     }

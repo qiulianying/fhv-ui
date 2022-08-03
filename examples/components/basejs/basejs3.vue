@@ -13,7 +13,7 @@
                     `
                     // return
                     function testReturn() {
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i &lt; 5; i++) {
                     if (i === 3) return
                     // 0,1,2
                     console.log("a this number is " + i)
@@ -21,14 +21,14 @@
                     }
                     // break
                     function testBreak() {
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i &lt; 5; i++) {
                     if (i === 3) break  // 0,1,2
                     console.log("b this number is " + i)
                     }
                     }
                     // continue
                     function testContinue() {
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i &lt; 5; i++) {
                     if (i === 3) continue // 进行下一个迭代了
                     // 0,1,2,4,5
                     console.log("c this number is " + i)

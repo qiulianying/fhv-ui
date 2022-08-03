@@ -35,6 +35,11 @@ app.use(store)
 app.use(router)
 app.use(FhvUI)
 
+// document.documentElement.style.fontSize = window.innerWidth / 7.5 + 'px'
+// window.onresize = () => {
+//     document.documentElement.style.fontSize = window.innerWidth / 7.5 + 'px'
+// }
+
 // 使用高亮组件
 app.use((app) => {
     // 注册全局自定义组件
