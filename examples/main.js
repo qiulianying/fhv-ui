@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import axios from 'axios';
-
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 // 引入公共public中的样式以及公用方法
 import '../public/css/cover.scss';
 import '../public/iconfont/iconfont.css';
@@ -29,6 +30,7 @@ const app = createApp(App)
 app.use(store)
 app.use(router)
 app.use(FhvUI)
+app.use(ElementPlus)
 
 // 使用高亮组件
 app.use((app) => {

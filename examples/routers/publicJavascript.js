@@ -2,6 +2,7 @@
 import Payment from '../components/publicjs/payment'
 import PublicUse from '../components/publicjs/PublicUse'
 import EsPublicuse from '../components/publicjs/EsPublicUse'
+import ElementTest from '../components/publicjs/ElementTest'
 
 export default [
     {
@@ -26,6 +27,14 @@ export default [
         path: '/component/EsPublicuse',
         name: 'EsPublicuse',
         component: EsPublicuse,
+        from: 's2'
+    },
+    {
+        id: 'js4',
+        title: '测试element常用',
+        path: '/component/ElementTest',
+        name: 'ElementTest',
+        component: ElementTest,
         from: 's2'
     },
 ]
