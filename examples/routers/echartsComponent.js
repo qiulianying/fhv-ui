@@ -2,6 +2,8 @@
 import echartsInstallation from '../components/echarts/echarts-installation'
 import echartsLine from '../components/echarts/echarts-line'
 import echartsPie from '../components/echarts/echarts-pie'
+import echartsMap from '../components/echarts/echarts-map'
+import echartsEco from '../components/echarts/echarts-economize'
 
 export default [
     {
@@ -26,6 +28,22 @@ export default [
         path: '/component/pie',
         name: 'pie',
         component: echartsPie,
+        from: 's0'
+    },
+    {
+        id: 114,
+        title: '中国地图',
+        path: '/component/map',
+        name: 'map',
+        component: echartsMap,
+        from: 's0'
+    },
+    {
+        id: 115,
+        title: '省级',
+        path: '/component/economize',
+        name: 'economize',
+        component: echartsEco,
         from: 's0'
     }
 ]
