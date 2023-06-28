@@ -13,7 +13,7 @@ import '../public/css/animation.scss'
 /*
 * 组件自动化导入：
 * 这个是webpack下的api
-require.context(directory, useSubdirectories = false, regExp = /^\.\//)
+require.context(directory, useSubdirectories = false, regExp = /\.\//)
 directory：要搜索的文件夹目录
 useSubdirectories：是否还应该搜索它的子目录
 regExp：一个匹配文件的正则表达式
@@ -24,7 +24,7 @@ const components = myImport.keys().map(item => {
     return value.default
 })
 
-// 定义install方法，接收vue作为参赛
+// 定义install方法，接收vue作为参数
 const install = Vue => {
     // 判断是否安装，如果安装过就不继续往下执行
     if (install.installed) return
